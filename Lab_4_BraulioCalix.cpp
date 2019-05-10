@@ -24,19 +24,12 @@ int main(){
 		matriz= provisionarMatriz(tamaX,tamaY);
 		printMatrix(matriz,tamaX,tamaY);
 		
-		cout << "antes" << endl;
 		matriz=llenarlinera(matriz,tamaX,tamaY);
 		
-		cout << "desp" << endl;
 		matriz= llenar(matriz,tamaX,tamaY);			
 		printMatrix(matriz,tamaX,tamaY);
 
-	//	for(int i=0; i <tamaX;i++){
-	//		for(int j=0;j<tamaY;i++){
-	//		cout << i<< j<< endl;
-	//		}
-	//		cout << endl;
-	//	}
+
 		liberarMatriz(matriz,tamaX);
 		cout << "desea reingresar 1) si 2) no " << endl;
 	       	cin >>salir;	
