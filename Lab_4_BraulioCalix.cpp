@@ -28,7 +28,7 @@ int main(){
 		matriz=llenarlinera(matriz,tamaX,tamaY);
 		printMatrix(matriz,tamaX,tamaY);
 		cout << "desp" << endl;
-			
+		matriz= llenar(matriz,tamaX,tamaY);			
 
 
 
@@ -43,8 +43,29 @@ int main(){
 	}//fin respuesta usuario
 }//fin main
 char** llenar(char** mat,int x,int y){
-
-}
+	int izq=0;
+	int cen=0;
+	int der=0;
+	for(int i=1; i<x ; i++){//1 va a ser . 2 va a ser ^
+		for(int j=0;j<y;j++){
+			if( (j-1<0)&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='^')){
+				
+			}else if((j+1>=x)&&(mat[i-1][j]=='.')&&(mat[i-1][j+1]=='^')){
+				
+			}else if((mat[i-1][j-1]=='^')&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='.')){
+				mat[i][j]='^';
+			}else if((mat[i-1][j-1]=='.')&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='^')){
+				mat[i][j]='^';
+			}else if((mat[i-1][j-1]=='^')&&(mat[i-1][j]=='.')&&(mat[i-1][j+1]=='.')){
+				mat[i][j]='^';
+			}else if((mat[i-1][j-1]=='.')&&(mat[i-1][j]=='.')&&(mat[i-1][j+1]=='^')){
+			mat[i][j]=='^';
+			}
+				
+		}
+	}
+	return mat;
+}//fin metodo
 char** llenarlinera(char** matriz,int y,int x){
 	char valor=' ';
 	bool valido= false;
