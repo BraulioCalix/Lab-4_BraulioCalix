@@ -9,7 +9,7 @@ void liberarMatriz(char**&,int);
 void printMatrix(char**,int,int);
 
 char** llenarlinera(char**,int,int);
-
+char** llenar(char**, int, int);
 int main(){
 	cout << "bienvenido" << endl;
 	int salir= 1;//respuesta de usuario
@@ -25,25 +25,50 @@ int main(){
 		printMatrix(matriz,tamaX,tamaY);
 		
 		cout << "antes" << endl;
-		 matriz=llenarlinera(matriz,tamaX,tamaY);
-
+		matriz=llenarlinera(matriz,tamaX,tamaY);
 		printMatrix(matriz,tamaX,tamaY);
 		cout << "desp" << endl;
-		
+			
+
+
+
+
+
+
+
+
 		liberarMatriz(matriz,tamaX);
 		cout << "desea reingresar 1) si 2) no " << endl;
 	       	cin >>salir;	
 	}//fin respuesta usuario
-}
+}//fin main
+char** llenar(char** mat,int x,int y){
 
+}
 char** llenarlinera(char** matriz,int y,int x){
 	char valor=' ';
+	bool valido= false;
 	for(int i=0;i<x ;i++){
+		valido=false;
+		cout << valido<< endl;
 		cout <<"ingrese el valor de la casila" << i << " :"<< endl;
 		cin >> valor;
-		cout << "valor " << valor << endl;
-		matriz[0][i]=valor;
-		cout << matriz[0][i]<< endl;
+		if(valor =='.' ||valor== '^' ){
+			matriz[0][i]=valor;
+			valido=true;
+		}
+		cout << valido << endl;
+		while(valido==false){
+			cout << "ingreso un caracter no valido " << endl;
+			cout <<"ingrese el valor de la casila" << i << " :"<< endl;
+                	cin >> valor;
+			if(valor =='.' ||valor== '^' ){
+	                        matriz[0][i]=valor;
+        	                valido=true;
+               		 }
+
+		}
+		//cout << "valor " << valor << endl
 	}
 return matriz;
 }
