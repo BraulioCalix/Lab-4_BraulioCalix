@@ -36,11 +36,6 @@ int main(){
 	}//fin respuesta usuario
 }//fin main
 char** llenar(char** mat,int x,int y){
-	cout << x<< endl;
-	cout << y << endl;
-	int izq=0;
-	int cen=0;
-	int der=0;
 	for(int i=1; i<x ; i++){//1 va a ser . 2 va a ser ^
 		for(int j=0;j<y;j++){
 			if( (j==0)&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='^')){
@@ -76,14 +71,13 @@ char** llenarlinera(char** matriz,int y,int x){
 	bool valido= false;
 	for(int i=0;i<x ;i++){
 		valido=false;
-		cout << valido<< endl;
 		cout <<"ingrese el valor de la casila" << i << " :"<< endl;
 		cin >> valor;
 		if(valor =='.' ||valor== '^' ){
 			matriz[0][i]=valor;
 			valido=true;
 		}
-		cout << valido << endl;
+	
 		while(valido==false){
 			cout << "ingreso un caracter no valido " << endl;
 			cout <<"ingrese el valor de la casila" << i << " :"<< endl;
@@ -94,7 +88,7 @@ char** llenarlinera(char** matriz,int y,int x){
                		 }
 
 		}
-		//cout << "valor " << valor << endl
+		
 	}
 return matriz;
 }
