@@ -66,7 +66,7 @@ char** llenarlinera(char** matriz,int y,int x){
 	bool valido= false;
 	for(int i=0;i<x ;i++){
 		valido=false;
-		cout <<"ingrese el valor de la casila" << i << " :"<< endl;
+		cout <<"ingrese el valor de la casila " << i << " :"<< endl;
 		cin >> valor;
 		if(valor =='.' ||valor== '^' ){
 			matriz[0][i]=valor;
