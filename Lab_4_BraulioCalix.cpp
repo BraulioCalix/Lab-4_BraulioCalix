@@ -21,15 +21,10 @@ int main(){
 		int tamaX = 0;
 		cin >> tamaX;
 		char** matriz = NULL;
-		matriz= provisionarMatriz(tamaX,tamaY);
-		printMatrix(matriz,tamaX,tamaY);
-		
+		matriz= provisionarMatriz(tamaX,tamaY);		
 		matriz=llenarlinera(matriz,tamaX,tamaY);
-		
 		matriz= llenar(matriz,tamaX,tamaY);			
 		printMatrix(matriz,tamaX,tamaY);
-
-
 		liberarMatriz(matriz,tamaX);
 		cout << "desea reingresar 1) si 2) no " << endl;
 	       	cin >>salir;	
