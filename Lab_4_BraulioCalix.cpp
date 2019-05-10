@@ -58,10 +58,9 @@ char** llenar(char** mat,int x,int y){
 			}else if((j==0)&&(mat[i-1][j]=='.')&&(mat[i-1][j+1]=='^')){
                                 mat[i][j]='^';
 			
-			}else if(){
-			}
-			
-			else if((mat[i-1][j-1]=='^')&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='.')){
+			}else if((j==y-1)&&(mat[i-1][j]=='^')&&(mat[i-1][j-1]=='^')){
+				mat[i][j]='^';
+			}else if((mat[i-1][j-1]=='^')&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='.')){
 				mat[i][j]='^';
 			}else if((mat[i-1][j-1]=='.')&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='^')){
 				mat[i][j]='^';
