@@ -31,13 +31,12 @@ int main(){
 		matriz= llenar(matriz,tamaX,tamaY);			
 		printMatrix(matriz,tamaX,tamaY);
 
-
-
-
-
-
-
-
+	//	for(int i=0; i <tamaX;i++){
+	//		for(int j=0;j<tamaY;i++){
+	//		cout << i<< j<< endl;
+	//		}
+	//		cout << endl;
+	//	}
 		liberarMatriz(matriz,tamaX);
 		cout << "desea reingresar 1) si 2) no " << endl;
 	       	cin >>salir;	
@@ -51,12 +50,18 @@ char** llenar(char** mat,int x,int y){
 	int der=0;
 	for(int i=1; i<x ; i++){//1 va a ser . 2 va a ser ^
 		for(int j=0;j<y;j++){
-			if( (j-1<0)&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='^')){
+			if( (j==0)&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='^')){
 				mat[i][j]='^';
 							
-			}else if((j+1>x)&&(mat[i-1][j]=='.')&&(mat[i-1][j-1]=='^')){
+			}else if((j==y-1)&&(mat[i-1][j]=='.')&&(mat[i-1][j-1]=='^')){
 				mat[i][j]='^';
-			}else if((mat[i-1][j-1]=='^')&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='.')){
+			}else if((j==0)&&(mat[i-1][j]=='.')&&(mat[i-1][j+1]=='^')){
+                                mat[i][j]='^';
+			
+			}else if(){
+			}
+			
+			else if((mat[i-1][j-1]=='^')&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='.')){
 				mat[i][j]='^';
 			}else if((mat[i-1][j-1]=='.')&&(mat[i-1][j]=='^')&&(mat[i-1][j+1]=='^')){
 				mat[i][j]='^';
